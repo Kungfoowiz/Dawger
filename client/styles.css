@@ -1,0 +1,50 @@
+.title {
+    text-align: center;
+  }
+  
+  .error-message {
+    background: #ff9b9b;
+    color: white;
+    border-radius: 5px;
+    padding: 10px;
+  }
+  
+  .woof-form, .loading {
+    width: 50%;
+    margin: 0 auto;
+  }
+  
+  .loading {
+    text-align: center;
+  }
+  
+  .woofs {
+    width: 80%;
+    margin: 0 auto;
+  }
+  
+  .woofs > div {
+    background: hsl(0, 0%, 95%);
+    padding: 12px;
+    border-radius: 4px;
+  }
+  
+  .woofs > div > h3 {
+    word-wrap: break-word;
+  }
+  
+  .woofs > div > p {
+    word-wrap: break-word;
+  }
+  
+  .woofs > div:not(:last-child) {
+    margin-bottom: 8px;
+  }
+
+
+  .woofs > div:last-child {
+    margin-bottom: 100px;
+  }
+
+
+

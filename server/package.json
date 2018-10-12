@@ -1,0 +1,23 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "node --inspect index.js",
+    "dev": "nodemon --inspect index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bad-words": "^1.6.3",
+    "cors": "^2.8.4",
+    "express": "^4.16.3",
+    "express-rate-limit": "^3.1.1",
+    "firebase": "^5.5.3",
+    "firebase-tools": "^5.0.1"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.4"
+  },
+  "description": ""
+}
