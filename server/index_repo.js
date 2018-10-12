@@ -8,11 +8,11 @@ const rateLimit = require("express-rate-limit");
 const app = express();
 
 var config = {
-  apiKey: "",
-  authDomain: "",
-  databaseURL: "",
-  storageBucket: "",
-  projectId: ""
+  apiKey: process.env.config_apiKey,
+  authDomain: process.env.config_authDomain,
+  databaseURL: process.env.config_databaseURL,
+  storageBucket: process.env.config_storageBucket,
+  projectId: process.env.config_projectId
 };
 
 firebase.initializeApp(config);
@@ -24,14 +24,16 @@ const filter = new Filter();
 app.enable("trust proxy");
 app.use(cors());
 app.use(express.json());
-
+app.use(express.static(__dirname + "/public"));
 
 
 
 app.get('/', (request, response) => {
-  response.json({
-    message: "Woof woof! 🐶 🐕"
-  });
+  // response.json({
+  //   message: "Woof woof! 🐶 🐕"
+  // });
+
+  response.sendFile(__dirname + "/views/index.html");
 });
 
 
@@ -39,7 +41,7 @@ app.get('/', (request, response) => {
 
 app.get('/woofs', (request, response, next) => {
 
-  firestore.collection("woofs").get()
+  firestore.collection("woofs").orderBy("created", "desc").get()
     .then(function (snapshot) {
       var result = snapshot.docs.map(doc => { 
         
@@ -69,8 +71,8 @@ function isValidWoof(woof) {
 
 
 app.use(rateLimit({
-  windowMs: 30 * 1000, // 30 seconds
-  max: 1
+  windowMs: 10 * 1000, // 10 seconds
+  max: 100
 }));
 
 

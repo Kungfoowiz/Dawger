@@ -3,9 +3,33 @@ const errorElement = document.querySelector('.error-message');
 const loadingElement = document.querySelector('.loading');
 const woofElement = document.querySelector('.woofs');
 const API_URL = 'http://localhost:5000/woofs';
+// const API_URL = 'https://dawger.glitch.me/woofs';
+const dogIcon = $(".dog-icon");
+const primaryButton = $(".button-primary");
 
 errorElement.style.display = 'none';
 
+
+$(function() {
+  dogIcon.hover(function() {
+    shakeEffect(dogIcon, "up", 7, 3, 3000);
+  });
+
+  primaryButton.hover(function () {
+    shakeEffect(primaryButton, "right", 3, 2, 1000);
+  });
+
+  // Reusable.
+
+  var shakeEffect = function(target, direction, times, distance, duration) {
+    // target.effect("shake", { direction: "up", times: 7, distance: 3 }, 3000);
+    target.effect(
+      "shake",
+      { direction: direction, times: times, distance: distance },
+      duration
+    );
+  };
+});
 
 
 
@@ -79,7 +103,7 @@ function listAllWoofs() {
     .then(woofs => {
 
       if(woofs !== undefined){
-        woofs.reverse();
+        // woofs.reverse();
         woofs.forEach(woof => {
           const div = document.createElement('div');
 

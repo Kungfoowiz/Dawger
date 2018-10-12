@@ -21,7 +21,7 @@
 
 .woofs {
   width: 80%;
-  margin: 0 auto;
+  margin: 30px auto;
 }
 
 .woofs > div {
@@ -44,4 +44,31 @@
 
 .woofs > div:last-child {
   margin-bottom: 100px;
+}
+
+
+
+
+.funny {
+    display: block;
+    animation-name: funny-anim;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: bezier-curve(0.1, 0.1, 0.2, 0.3);
+}
+
+@keyframes funny-anim {
+    0% {
+        transform: scale(1.0) rotate(0deg) skew(0deg);
+        color: #c81704;
+    }
+    25% {
+        transform: scale(0.94) rotate(1deg) skew(1deg);
+    }
+    50% {
+        transform: scale(0.98) rotate(0.5deg) skew(0.5deg);
+    }
+    100% {
+        transform: scale(1.0) rotate(0deg) skew(0deg);
+    }
 }
