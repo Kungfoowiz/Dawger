@@ -2,8 +2,8 @@ const form = document.querySelector('form');
 const errorElement = document.querySelector('.error-message');
 const loadingElement = document.querySelector('.loading');
 const woofElement = document.querySelector('.woofs');
-const API_URL = 'http://localhost:5000/woofs';
-// const API_URL = 'https://dawger.glitch.me/woofs';
+// const API_URL = 'http://localhost:5000/woofs';
+const API_URL = 'https://dawger.glitch.me/woofs';
 const dogIcon = $(".dog-icon");
 const primaryButton = $(".button-primary");
 

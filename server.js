@@ -24,7 +24,7 @@ const filter = new Filter();
 app.enable("trust proxy");
 app.use(cors());
 app.use(express.json());
-app.use(express.static(__dirname + "/public"));
+app.use(express.static(__dirname + "/client"));
 
 
 
@@ -33,7 +33,7 @@ app.get('/', (request, response) => {
   //   message: "Woof woof! 🐶 🐕"
   // });
 
-  response.sendFile(__dirname + "/views/index.html");
+  response.sendFile(__dirname + "/client/index.html");
 });
 
 
